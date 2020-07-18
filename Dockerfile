@@ -3,9 +3,9 @@ MAINTAINER pizepei "pizepei@pizepei.com"
 ENV COMPOSER_HOME /root/composer
 #设置时区
 ENV TZ=Asia/Shanghai
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone  \
 #更新安装依赖包和PHP核心拓展
-RUN apt-get update  \
+&& apt-get update  \
 #重新安装 libzip
 #删除重新安装 libzip
 #RUN apt-get remove libzip
